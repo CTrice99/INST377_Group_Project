@@ -1,14 +1,31 @@
 <html>
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" href="Styling.css">
-    </head>
 
-    <body class="home">
-        <h1>The Dog API</h1>
-        <h2>Dogs as a Service</h2>
-        <h2>Because Everyday is a Dog Day</h2>
-        <h2>An API all about Dogs</h2>
-        <h2>60k Images. Breeds. Facts.</h2>
-    </body>
+<head>
+    <title>DogAPI - Home</title>
+    <link rel="stylesheet" href="Styling.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js"></script>
+    <script src="Home-JS.js" defer></script>
+</head>
+
+<body class="pages">
+    <h1>The DogAPI</h1>
+    <nav id="nav">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About-Us.html">About Us</a></li>
+            <li><a href="Favorites.html">Favorites</a></li>
+            <li><a href="Help.html">Help</a></li>
+        </ul>
+    </nav>
+    <div data-simple-slider class="simple-slider"></div>
+    <div class="home">
+        <p>Dogs as a service.<br>Because every day is a Dog day.</p>
+        <a href="about-us.html"><button class="learn-more-btn" role="button">Learn More</button></a>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search Up Dog Breeds or Categories!" />
+        <button id="search-btn">&#128269;</button>
+    </div>
+</body>
+
 </html>
