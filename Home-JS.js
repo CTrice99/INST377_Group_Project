@@ -16,16 +16,34 @@ async function populateSlider() {
         imageHtml += `<div><img src="${imageUrl}" alt="Dog Image" style="width:100%; height:auto;" /></div>`;
     }
 
-    // insert images into the slider container
     carouselContainer.innerHTML = imageHtml;
 
     // initialize the simple slider
     simpleslider.getSlider({
         container: carouselContainer,
         autoPlay: true,
-        transitionTime: 1.5, 
-        delay: 3 
+        transitionTime: 1.5,
+        delay: 3,
     });
 }
 
-populateSlider();
+// handle search bar functionality
+function setupSearchBar() {
+    const searchForm = document.getElementById('search-form');
+
+    // add submit event listener to the form
+    searchForm.addEventListener('submit', function (event) {
+        event.preventDefault(); 
+        const query = document.getElementById('search-input').value.trim();
+
+        if (query) {
+            // redirect to the results.html page with the breed query
+            window.location.href = `results.html?breed=${encodeURIComponent(query)}`;
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    populateSlider();
+    setupSearchBar();
+});
