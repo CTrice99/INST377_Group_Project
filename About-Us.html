@@ -15,10 +15,17 @@
             <li><a href="Help.html">Help</a></li>
         </ul>
     </nav>
+
     <div class="search-bar">
-        <input type="text" placeholder="Search Up Dog Breeds or Categories!" />
-        <button>&#128269;</button>
+        <input type="text" id="breed-input" placeholder="Search Up Dog Breeds or Categories!" />
+
+        <button id="search-button">&#128269;</button>
     </div>
+    <script src="About_Us_JS.js"></script>
+
+
+
+
     <div class="about-content">
         <div class="card">
             <img src="dog_image1.png" alt="Information">
@@ -29,6 +36,11 @@
             <img src="dog_image2.webp" alt="Breeds">
             <h3>Breeds</h3>
             <p>We will make sure you know everything about the breed you are looking for.</p>
+            <a href="Breeds_List.html" target="_blank">
+                <button>See All Available Breeds Here</button>
+            </a>
+            <div id="breed-list" class="breed-list"></div>
+        
         </div>
         <div class="card">
             <img src="dog_image3.webp" alt="Adopting">
