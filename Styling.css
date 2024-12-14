@@ -181,3 +181,22 @@ body {
       font-size: 1.25rem;
   }
 }
+
+/* styling help page */
+.help-content{
+  text-align: left;
+  float: left;
+  border: 5px solid black;
+  width: 45%;
+  height: 70%;
+  background-color: whitesmoke;
+}
+
+#PersonAndDog {
+  width: 50%;
+  height: 50%;
+  /* height: 250px; */
+  float: right;
+  /* float: top;  */
+
+}
