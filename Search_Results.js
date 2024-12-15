@@ -112,6 +112,8 @@ function addFavorite(breed) {
 
     // Save updated favorites to localStorage
     localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    //Show an alert indicating success
     alert(`${breed.name} has been added to your favorites!`);
 }
 
