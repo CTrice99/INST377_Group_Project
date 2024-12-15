@@ -12,7 +12,11 @@ function fetchBreedList() {
         const breedItem = document.createElement('li');
         breedItem.textContent = breed.name;
         breedItem.style.cursor = 'pointer';
+        breedItem.addEventListener('click', () => {
+          window.location.href = `Breeds_Result.html?breed=${breed.name}`;
+        });
         breedListContainer.appendChild(breedItem);
+        
       });
     })
     .catch(error => {
