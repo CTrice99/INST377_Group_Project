@@ -3,7 +3,7 @@
 <head>
     <title>DogAPI - Results</title>
     <link rel="stylesheet" href="Styling.css">
-    <script src="Results-JS.js" defer></script>
+    <script src="Search_Results.js" defer></script>
 </head>
 
 <body class="pages">
@@ -16,8 +16,23 @@
             <li><a href="Help.html">Help</a></li>
         </ul>
     </nav>
-    <div id="breed-info-container">
-        <p>Loading breed information...</p>
+    <div id="main-content">
+        <section id="exact-match">
+            <h2>Exact Match</h2>
+            <div id="breed-info">
+                <p>Loading...</p>
+            </div>
+            <div>
+                <img id="breed-image" src="" alt="Breed image" style="max-width:100%; max-height:300px;" />
+            </div>
+        </section>
+
+        <section id="similar-results">
+            <h2>Similar Breeds</h2>
+            <div id="similar-breeds">
+                <p>Loading similar results...</p>
+            </div>
+        </section>
     </div>
 </body>
 
