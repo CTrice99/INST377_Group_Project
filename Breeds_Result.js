@@ -1,3 +1,4 @@
+/*
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const breedName = params.get('breed');
@@ -50,3 +51,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
   
+  */
