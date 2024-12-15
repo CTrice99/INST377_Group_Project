@@ -91,6 +91,30 @@ function displaySimilarBreeds(similarBreeds, exactBreed) {
     container.innerHTML = similarItems || `<p>No similar breeds found.</p>`;
 }
 
+// Add to Favorites functionality
+function addFavorite(breed) {
+    // Get existing favorites from localStorage
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    // Check if the breed is already in favorites
+    if (favorites.some(fav => fav.id === breed.id)) {
+        alert(`${breed.name} is already in your favorites!`);
+        return;
+    }
+
+    // Add the current breed to favorites
+    favorites.push({
+        id: breed.id,
+        name: breed.name,
+        image: document.getElementById('breed-image').src, // Add image URL
+        temperament: breed.temperament,
+    });
+
+    // Save updated favorites to localStorage
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    alert(`${breed.name} has been added to your favorites!`);
+}
+
 // Handle page load
 document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
