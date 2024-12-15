@@ -1,3 +1,5 @@
+
+
 let breedList = []; // List of all available dog breeds
 
 // Fetch all breeds from The Dog API
@@ -89,6 +91,32 @@ function displaySimilarBreeds(similarBreeds, exactBreed) {
     container.innerHTML = similarItems || `<p>No similar breeds found.</p>`;
 }
 
+// Add to Favorites functionality
+function addFavorite(breed) {
+    // Get existing favorites from localStorage
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    // Check if the breed is already in favorites
+    if (favorites.some(fav => fav.id === breed.id)) {
+        alert(`${breed.name} is already in your favorites!`);
+        return;
+    }
+
+    // Add the current breed to favorites
+    favorites.push({
+        id: breed.id,
+        name: breed.name,
+        image: document.getElementById('breed-image').src, // Add image URL
+        temperament: breed.temperament,
+    });
+
+    // Save updated favorites to localStorage
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    //Show an alert indicating success
+    alert(`${breed.name} has been added to your favorites!`);
+}
+
 // Handle page load
 document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
@@ -111,3 +139,35 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('breed-info').innerHTML = `<p>No breed specified. Please go back and try again.</p>`;
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const params = new URLSearchParams(window.location.search);
+    const breedName = params.get('breed');
+
+    await fetchAllBreeds();
+
+    if (breedName) {
+        const similarBreeds = findSimilarBreeds(breedName);
+        if (similarBreeds.length > 0) {
+            const exactBreed = similarBreeds[0].breed;
+            displayExactMatch(exactBreed);
+
+            console.log("Exact breed for Add to Favorites:", exactBreed);
+
+            const addFavoriteButton = document.getElementById('add-favorite-button');
+            if (addFavoriteButton) {
+                console.log("Button found. Attaching event listener.");
+                addFavoriteButton.addEventListener('click', () => addFavorite(exactBreed));
+            } else {
+                console.error("Add to Favorites button not found.");
+            }
+        } else {
+            document.getElementById('breed-info').innerHTML = `<p>No matching breed found for "${breedName}".</p>`;
+            document.getElementById('similar-breeds').innerHTML = `<p>No similar breeds found.</p>`;
+        }
+    } else {
+        document.getElementById('breed-info').innerHTML = `<p>No breed specified. Please go back and try again.</p>`;
+    }
+});
+
