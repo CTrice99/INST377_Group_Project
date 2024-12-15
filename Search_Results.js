@@ -140,3 +140,34 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const params = new URLSearchParams(window.location.search);
+    const breedName = params.get('breed');
+
+    await fetchAllBreeds();
+
+    if (breedName) {
+        const similarBreeds = findSimilarBreeds(breedName);
+        if (similarBreeds.length > 0) {
+            const exactBreed = similarBreeds[0].breed;
+            displayExactMatch(exactBreed);
+
+            console.log("Exact breed for Add to Favorites:", exactBreed);
+
+            const addFavoriteButton = document.getElementById('add-favorite-button');
+            if (addFavoriteButton) {
+                console.log("Button found. Attaching event listener.");
+                addFavoriteButton.addEventListener('click', () => addFavorite(exactBreed));
+            } else {
+                console.error("Add to Favorites button not found.");
+            }
+        } else {
+            document.getElementById('breed-info').innerHTML = `<p>No matching breed found for "${breedName}".</p>`;
+            document.getElementById('similar-breeds').innerHTML = `<p>No similar breeds found.</p>`;
+        }
+    } else {
+        document.getElementById('breed-info').innerHTML = `<p>No breed specified. Please go back and try again.</p>`;
+    }
+});
+
