@@ -1,3 +1,5 @@
+
+
 let breedList = []; // List of all available dog breeds
 
 // Fetch all breeds from The Dog API
@@ -111,3 +113,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('breed-info').innerHTML = `<p>No breed specified. Please go back and try again.</p>`;
     }
 });
+
