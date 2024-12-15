@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             console.log("Exact breed for Add to Favorites:", exactBreed);
 
-            const addFavoriteButton = document.getElementById('add-favorite-button');
+            const addFavoriteButton = document.getElementById('add-to-favorites');
             if (addFavoriteButton) {
                 console.log("Button found. Attaching event listener.");
                 addFavoriteButton.addEventListener('click', () => addFavorite(exactBreed));
