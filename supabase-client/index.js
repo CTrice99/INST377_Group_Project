@@ -1,11 +1,11 @@
 
-const express = require('express')
-const supabaseClient = require('@supabase/supabase-js')
+const express = require('express');
+const supabaseClient = require('@supabase/supabase-js');
 
 
-const app = express()
-const port = 3000
-app.use(express.static(__dirname + '/public'))
+const app = express();
+const port = 3000;
+app.use(express.static(__dirname + '/public'));
 
 const supabaseUrl = 'https://ebixebwcsjtrkypluumw.supabase.co'
 const supabaseKey =
@@ -13,17 +13,34 @@ const supabaseKey =
 const supabase = supabaseClient.createClient(supabaseUrl,supabaseKey);
 
 
-app.get('/clients', (req, res) => {
-    console.log('Attempting to get all clients.')
-    res.send('Blah')
+app.get('/clients', async(req, res) => {
+    console.log('Attempting to get all clients.');
+
+    const {data, error} = await supabase
+        .from('client')
+        .select()
+
+    if (error){
+        console.log('Error:', error);
+        res.send(error);
+    }else{
+        console.log('Successfully Retreived Data');
+        res.send(data);
+
+
+    }
+    
+    
+
+    res.send('Blah');
 })
 
 app.post('/client', (req, res) =>{
-    console.log('Attempting to add Client.')
-    res.send('Blah')
+    console.log('Attempting to add Client.');
+    res.send('Blah');
 })
 
 app.listen(port, () => {
-    console.log('App is barking')
+    console.log('App is barking');
 })
 
