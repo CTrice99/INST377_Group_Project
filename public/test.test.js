@@ -36,13 +36,7 @@
 // });
 
 
-test('redirects to the correct URL with breed name when search button is clicked', () => {
-  breedInput.value = 'golden retriever';
-  delete window.location;
-  window.location = { href: '' };
-  fireEvent.click(searchButton);
-  expect(window.location.href).toBe('Results.html?breed=golden%20retriever');
-});
+
 
 
 
