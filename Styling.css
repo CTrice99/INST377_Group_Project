@@ -4,6 +4,14 @@ body {
     padding: 0;
     background-color: rgb(251, 245, 221);
 }
+body {
+  animation: grow 1s;
+}
+
+@keyframes grow {
+    0% { transform: scale(.2); }
+  100% { transform: scale(1); }
+}
 
 /* nav bar styling */
 #nav {
@@ -254,24 +262,6 @@ body {
 
 
 /* adding confetti to the success page */
-/* :root { */
-  /* --bg: yellow; */
-/* } */
-
-/* html, */
-/* body { */
-  /* background-color: #101e35; */
-  /* font-size: 10px; Makes 1rem = 10px */
-/* } */
-/* label { */
-  /* color: white; */
-  /* font-size: 1.5rem; */
-/* } */
-/* input { */
-  /* width: 40px; */
-  /* height: 40px; */
-  /* cursor: pointer; */
-/* } */
 .confetti-container {
   user-select: none;
   pointer-events: none;
@@ -441,9 +431,4 @@ body {
   100% {
     transform: translateY(100vh);
   }
-}
-
-.catPictures {
-  height: 100px;
-  width: 100px;
 }
