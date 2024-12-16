@@ -15,7 +15,7 @@ const supabaseKey =
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 
 app.get('/', (req, res) => {
-  res.sendFile('INST377_Group_Project/Contact.html', { root: __dirname });
+  res.sendFile('public/Contact.html', { root: __dirname });
 });
 
 app.get('/customers', async (req, res) => {
