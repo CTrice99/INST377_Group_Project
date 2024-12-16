@@ -432,3 +432,8 @@ body {
     transform: translateY(100vh);
   }
 }
+
+.catPeek {
+  height: 100px;
+  width: 100px;
+}
