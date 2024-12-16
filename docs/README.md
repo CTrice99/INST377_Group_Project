@@ -16,11 +16,6 @@ How to run any tests you have written for your software
 The API for your server application - all GET, POST, PATCH, etc endpoints, and what they each do
 
 
-                                                        How to install our application! 
-                                                        
-Ensure that the following files are installed on your device. Since we do not have a domain, they need to be installed locally for the HTML files to run. The files are located at https://github.com/CTrice99/INST377_Group_Project. Each file plays an important part in allowing our slew of pages to work properly.
-
-
                                                   Running the HTML files using Google Chrome
 
 Use Google Chrome and download the CORS Plugin linked below. This will allow connections to the API's used. Then to start on our Home page, click on the Home.html file to begin. Make sure that chrome is your default browser!
