@@ -58,7 +58,10 @@ app.post('/customer', async (req, res) => {
     res.send(data);
   }
 });
-
+/*
 app.listen(port, () => {
   console.log('App is ALIVEEEEEE');
 });
+*/
+
+module.exports = app;
