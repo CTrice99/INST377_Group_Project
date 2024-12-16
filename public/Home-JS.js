@@ -38,7 +38,7 @@ function setupSearchBar() {
 
         if (query) {
             // redirect to the results.html page with the breed query
-            window.location.href = `results.html?breed=${encodeURIComponent(query)}`;
+            window.location.href = `Results.html?breed=${encodeURIComponent(query)}`;
         }
     });
 }
